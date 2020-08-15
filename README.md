@@ -4,7 +4,6 @@
   - [Overview](#overview)
   - [Modules index](#modules-index)
     - [VPC Configruations](#vpc-configruations)
-    - [EC2 Addons and Configurations](#ec2-addons-and-configurations)
     - [VPC Parts](#vpc-parts)
   - [CI\CD Approuch](#cicd-approuch)
   - [References](#references)
@@ -22,13 +21,6 @@ Docs: [docs-terraform-public-modules][docs-home]
 | terraform-aws-btlabz-vpc-ha-2x | [GITHub][gh-vpc-ha-2x] | [TFRegistry][tf-vpc-ha-2x] | VPC, 2x AZs, HA NAT |
 | terraform-aws-btlabz-vpc-ha-3x | [GITHub][gh-vpc-ha-3x] | [TFRegistry][tf-vpc-ha-2x] | VPC, 3x AZs, HA NAT |
 
-### EC2 Addons and Configurations
-
-| Module name | Module repo | Module registry | Notes |
-| --- | --- | --- | --- |
-| ... | ... | ... | ... |
-| ... | ... | ... | ... |
-
 ### VPC Parts
 
 | Module name | Module repo | Module registry | Notes |
@@ -40,11 +32,15 @@ Docs: [docs-terraform-public-modules][docs-home]
 
 ## CI\CD Approuch
 
-CI\CD Layer ...
+All the modules are tested and validated with the following set of tools:
 
-CI\CD Gists ...
+* Terraform internal fmt\validate\plan
+* OPA ConfTest for module\plan validation
+* Terratest to test and validate actual deployment
 
-Flow ...
+Google CloudBuild is used to execute all the workflows.
+
+See details here: [terraform-cicd.md](terraform-cicd.md)
 
 ## References
 
